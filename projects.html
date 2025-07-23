@@ -1,1 +1,90 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects - Rancon Studios</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Rancon Studios - Portfolio Projects">
+</head>
+<body>
+    <header class="letterhead">
+        <div class="lh-header">
+            <div class="logo-svg">
+                <svg width="38" height="38" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Rancon Studios Logo">
+                  <defs>
+                    <linearGradient id="rsgrad1" x1="0" y1="0" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#3e72f9"/>
+                      <stop offset="1" stop-color="#2de0a7"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="27" cy="27" r="25" fill="url(#rsgrad1)" stroke="#fff" stroke-width="3"/>
+                  <text x="50%" y="56%" text-anchor="middle" fill="#fff" font-family="Segoe UI, Arial" font-size="20" font-weight="bold" dy=".3em">RS</text>
+                </svg>
+            </div>
+            <div class="lh-logo-text">Rancon Studios</div>
+        </div>
+        <hr class="lh-divider">
+        <nav class="main-nav">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#services">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+    <section class="fadein" style="margin-top:2rem;">
+        <div class="container">
+            <h1 style="color:#3e72f9;">Our Projects</h1>
+            <div class="projects-grid">
+                <div class="project-card fadein show">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80"
+                        alt="AI generated campaign" loading="lazy">
+                    <h3>Ramadan Mega Sale Campaign</h3>
+                    <p>
+                        Social campaign for a national retailer during Ramadan, leveraging AI-driven targeting and creative visuals. Achieved a 35% uplift in engagement and record sales.
+                    </p>
+                    <span class="tag">Client: Dhaka Retail Mart</span>
+                </div>
+                <div class="project-card fadein show">
+                    <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=600&q=80"
+                        alt="AI generated fashion campaign" loading="lazy">
+                    <h3>Startup Launch – Fashion Next</h3>
+                    <p>
+                        Digital launch of a fashion startup targeting Gen Z. AI-curated content and influencer collaborations, 5,000+ organic followers, 400+ sales in month one.
+                    </p>
+                    <span class="tag">Client: Fashion Next</span>
+                </div>
+                <div class="project-card fadein show">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80"
+                        alt="AI generated WhatsApp automation" loading="lazy">
+                    <h3>WhatsApp Sales Automation</h3>
+                    <p>
+                        AI-powered WhatsApp automation for a home appliance brand, reducing response time by 70% and boosting customer satisfaction.
+                    </p>
+                    <span class="tag">Client: HomeTech BD</span>
+                </div>
+                <!-- Add more project-card divs here for more projects -->
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            &copy; 2025 Rancon Studios. All rights reserved.
+        </div>
+    </footer>
+    <script>
+        // Fade-in Animation on Scroll for this page
+        function fadeInOnScroll() {
+            document.querySelectorAll('.fadein').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 30) {
+                    el.classList.add('show');
+                }
+            });
+        }
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+    </script>
+</body>
+</html>
