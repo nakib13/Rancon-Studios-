@@ -313,51 +313,69 @@ footer {
     z-index: 0;
     overflow: hidden;
 }
+
 .background-gradient {
     position: absolute;
-    top: 0; left: 0; width: 100vw; height: 100vh;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
     background: radial-gradient(circle at 70% 20%, #3e72f9 0%, transparent 68%),
                 radial-gradient(circle at 30% 80%, #2de0a7 0%, transparent 65%);
     opacity: 0.28;
     z-index: 1;
     animation: gradientMove 18s ease-in-out infinite alternate;
 }
-@keyframes gradientMove {.floating-shape {
+
+@keyframes gradientMove {
+    from {
+        transform: scale(1) translate(0, 0);
+    }
+    to {
+        transform: scale(1.05) translate(-20px, 20px);
+    }
+}
+
+.floating-shape {
     position: absolute;
     border-radius: 50%;
     opacity: 0.18;
     z-index: 2;
     pointer-events: none;
 }
+
 .shape1 {
     width: 180px; height: 180px;
     background: linear-gradient(135deg, #3e72f9 60%, #fff 100%);
     top: 12%; left: 7%;
     animation: float1 13s ease-in-out infinite alternate;
 }
+
 @keyframes float1 {
-    from { transform: translateY(0) scale(1);}
-    to { transform: translateY(24px) scale(1.1);}
+    from { transform: translateY(0) scale(1); }
+    to { transform: translateY(24px) scale(1.1); }
 }
+
 .shape2 {
     width: 110px; height: 110px;
     background: linear-gradient(135deg, #2de0a7 40%, #fff 100%);
     bottom: 16%; right: 14%;
     animation: float2 9s ease-in-out infinite alternate;
 }
+
 @keyframes float2 {
-    from { transform: translateY(0) scale(1);}
-    to { transform: translateY(-16px) scale(0.92);}
+    from { transform: translateY(0) scale(1); }
+    to { transform: translateY(-16px) scale(0.92); }
 }
+
 .shape3 {
     width: 90px; height: 90px;
     background: linear-gradient(135deg, #3e72f9 60%, #2de0a7 100%);
     top: 58%; left: 78%;
     animation: float3 15s ease-in-out infinite alternate;
 }
+
 @keyframes float3 {
-    from { transform: translateX(0) scale(1);}
-    to { transform: translateX(-30px) scale(1.16);}
+    from { transform: translateX(0) scale(1); }
+    to { transform: translateX(-30px) scale(1.16); }
 }
 
 .container {
@@ -365,7 +383,6 @@ footer {
     max-width: 1100px;
     margin: 0 auto;
 }
-
 /* Fade-in animation for sections */
 .fadein {
     opacity: 0;
