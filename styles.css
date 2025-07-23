@@ -430,4 +430,8 @@ footer {
         width: 100%;
         padding: 0 2vw;
     }
+    .fadein, .fadein.show, .project-card, .project-card.fadein, .project-card.show {
+    opacity: 1 !important;
+    transform: none !important;
+}
 }
