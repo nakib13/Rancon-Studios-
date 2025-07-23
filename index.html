@@ -19,7 +19,20 @@
     <!-- Letterhead-like Header -->
     <header class="letterhead">
         <div class="lh-header">
-            <div class="lh-logo">Rancon Studios</div>
+            <!-- SVG Logo -->
+            <div class="logo-svg">
+                <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Rancon Studios Logo">
+                  <defs>
+                    <linearGradient id="rsgrad1" x1="0" y1="0" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#3e72f9"/>
+                      <stop offset="1" stop-color="#2de0a7"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="27" cy="27" r="25" fill="url(#rsgrad1)" stroke="#fff" stroke-width="3"/>
+                  <text x="50%" y="56%" text-anchor="middle" fill="#fff" font-family="Segoe UI, Arial" font-size="20" font-weight="bold" dy=".3em">RS</text>
+                </svg>
+            </div>
+            <div class="lh-logo-text">Rancon Studios</div>
             <div class="lh-info">
                 7th Floor, Dreamscape Tower, 123 Innovation Ave, Dhaka 1207, Bangladesh<br>
                 Email: <a href="mailto:contact@ranconstudios.com">contact@ranconstudios.com</a><br>
@@ -31,13 +44,13 @@
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
+            <a href="projects.html">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero fadein">
         <div class="container hero-content">
             <div class="hero-text">
                 <h1>Elevate Your Brand with Rancon Studios</h1>
@@ -52,7 +65,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="fadein">
         <div class="container about-flex">
             <div class="about-img">
                 <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
@@ -74,7 +87,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services">
+    <section id="services" class="fadein">
         <div class="container">
             <h2>Our Services</h2>
             <ul class="services-list">
@@ -87,8 +100,8 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
+    <!-- Projects Section (preview, link to projects.html) -->
+    <section id="projects" class="fadein">
         <div class="container">
             <h2>Featured Projects</h2>
             <div class="projects-grid">
@@ -97,7 +110,7 @@
                         alt="AI generated campaign" loading="lazy">
                     <h3>Ramadan Mega Sale Campaign</h3>
                     <p>
-                        Designed and executed a multi-platform social media campaign for a national retailer during Ramadan, leveraging AI-driven targeting and creative visuals. Achieved a 35% uplift in engagement and set a new record for online sales.
+                        Social campaign for a national retailer during Ramadan, leveraging AI-driven targeting and creative visuals. Achieved a 35% uplift in engagement and record sales.
                     </p>
                     <span class="tag">Client: Dhaka Retail Mart</span>
                 </div>
@@ -106,7 +119,7 @@
                         alt="AI generated fashion campaign" loading="lazy">
                     <h3>Startup Launch – Fashion Next</h3>
                     <p>
-                        Orchestrated the digital launch of a fashion startup targeting Gen Z. Ran AI-curated content and influencer collaborations, reaching 5,000+ organic followers and 400+ sales in the first month.
+                        Digital launch of a fashion startup targeting Gen Z. AI-curated content and influencer collaborations, 5,000+ organic followers, 400+ sales in month one.
                     </p>
                     <span class="tag">Client: Fashion Next</span>
                 </div>
@@ -115,16 +128,19 @@
                         alt="AI generated WhatsApp automation" loading="lazy">
                     <h3>WhatsApp Sales Automation</h3>
                     <p>
-                        Implemented AI-powered WhatsApp automation for a home appliance brand, reducing response time by 70% and increasing customer satisfaction through intelligent sales assistance.
+                        AI-powered WhatsApp automation for a home appliance brand, reducing response time by 70% and boosting customer satisfaction.
                     </p>
                     <span class="tag">Client: HomeTech BD</span>
                 </div>
+            </div>
+            <div style="margin-top: 18px; text-align: center;">
+                <a href="projects.html" class="cta-btn">See All Projects</a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" class="fadein">
         <div class="container contact-flex">
             <div class="contact-info">
                 <h2>Contact Rancon Studios</h2>
@@ -151,8 +167,8 @@
     </footer>
 
     <script>
-        // Smooth scroll for navigation
-        document.querySelectorAll('nav a').forEach(link => {
+        // Smooth scroll for navigation (except for projects.html)
+        document.querySelectorAll('nav a[href^="#"]').forEach(link => {
             link.addEventListener('click', function(e) {
                 if(this.hash) {
                     e.preventDefault();
@@ -160,6 +176,18 @@
                 }
             });
         });
+
+        // Fade-in Animation on Scroll
+        function fadeInOnScroll() {
+            document.querySelectorAll('.fadein').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 30) {
+                    el.classList.add('show');
+                }
+            });
+        }
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
     </script>
 </body>
 </html>
